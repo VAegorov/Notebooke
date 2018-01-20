@@ -21,17 +21,12 @@ function notes($link)
     return $notes;
 }
 
-function note_one($link)
+function note_one($link, $id)
 {
-    if (!isset($_GET['id'])) {
-        return false;
-    } else {
         $id = $_GET['id'];
         $query = sprintf("SELECT * FROM notebook WHERE id=%d", (int)$id);
         $result = mysqli_query($link, $query) or die(mysqli_error($link));
         $note_one = [];
         $note_one[] = mysqli_fetch_assoc($result);
         return $note_one;
-    }
-
 }

@@ -19,6 +19,9 @@
     endforeach;
     ?>
     </div>
+    <form action="add.php" method="GET">
+        <input type="submit" name="add" value="Добавить статью">
+    </form>
     <p>add note</p>
 
 </body>
