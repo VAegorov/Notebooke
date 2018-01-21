@@ -16,7 +16,7 @@
         ?>
         <h2><?=$elem['title']; ?></h2>
         <p><?=$elem['date']; ?></p>
-        <p><?=$elem['note']; ?></p>
+        <p><?=nl2br($elem['note']); ?></p>
         <?php
             endforeach;
         ?>
