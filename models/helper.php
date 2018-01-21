@@ -30,3 +30,19 @@ function note_one($link, $id)
         $note_one[] = mysqli_fetch_assoc($result);
         return $note_one;
 }
+
+function add_note($link, $title, $note)
+{
+    if (empty($title) || empty($note)) {
+        return false;
+    } else {
+        $title = mysqli_real_escape_string($link, trim($title));
+        $note = mysqli_real_escape_string($link, trim($note));
+        $query = sprintf("INSERT INTO notebook (date, title, note) VALUES (NOW(), '%s', '%s')", $title, $note);
+        $result = mysqli_query($link, $query ) or die(mysqli_error($link));
+        if ($result) {
+            return true;
+        } else return false;
+
+    }
+}
