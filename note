@@ -3,4 +3,4 @@ index.php  основная страница
 note.php        
 notes.php
 helper.php
-
+height: 100px;

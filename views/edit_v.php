@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css1.css">
     <title>Notebook</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
             <p><input type="text" hidden name="id" value="<?=$elem['id']; ?>"></p>
             <p><input type="text" name="date" value="<?=$elem['date']; ?>"></p>
             <p><input type="text" name="title" value="<?=$elem['title']; ?>"></p>
-            <p><textarea name="note"><?=$elem['note']; ?></textarea></p>
+            <p><textarea name="note" rows="10"><?=$elem['note']; ?></textarea></p>
             <p><input type="submit" name="submit" value="Сохранить"></p>
         </form>
         <?php

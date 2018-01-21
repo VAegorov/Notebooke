@@ -18,5 +18,6 @@ if (isset($_REQUEST['edit'])) {
         echo "Статья не отредактирована";
     } else {
         header("Location: index.php");
+
     }
 }
