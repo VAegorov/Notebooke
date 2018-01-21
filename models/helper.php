@@ -14,7 +14,7 @@ function connect()
 
 function notes($link)
 {
-    $query = "SELECT * FROM notebook";//сделать выборку определенного кол-ва символов заметки
+    $query = "SELECT id, date, title, LEFT(note, 150) AS 'note' FROM notebook";
     $result = mysqli_query($link, $query) or die(mysqli_error($link));
     $notes = [];
     while ($data = mysqli_fetch_assoc($result)) $notes[] = $data;
