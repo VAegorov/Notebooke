@@ -58,8 +58,15 @@ function delete($link, $id)
 }
 
 
-function edit($link, $id)
+function edit($link, $id, $date, $title, $note)// не редактируется нормально дата
 {
-
+    $date = mysqli_real_escape_string($link, trim($date));
+    $title = mysqli_real_escape_string($link, trim($title));
+    $note = mysqli_real_escape_string($link, trim($note));
+    $query = sprintf("UPDATE notebook SET date=%d, title='%s', note='%s' WHERE id=%d", $date, $title, $note, (int)$id);
+    $result = mysqli_query($link, $query) or die(mysqli_error($link));
+    if ($result) {
+        return true;
+    } else return false;
 }
 ?>
