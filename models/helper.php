@@ -46,3 +46,20 @@ function add_note($link, $title, $note)
 
     }
 }
+
+
+function delete($link, $id)
+{
+    $query = sprintf("DELETE FROM notebook WHERE id=%d", (int)$id);
+    $result = mysqli_query($link, $query) or die(mysqli_error($link));
+    if ($result) {
+        return true;
+    } else return false;
+}
+
+
+function edit($link, $id)
+{
+
+}
+?>

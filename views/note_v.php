@@ -20,7 +20,17 @@
             endforeach;
         ?>
     </div>
-    <p>edit</p>
-    <p>delete</p>
+    <div>
+        <form action="delete.php" method="GET">
+            <input type="text" hidden name="id" value="<?=$elem['id']; ?>">
+            <p><input type="submit" name="delete" value="Удалить"></p>
+        </form>
+    </div><div>
+        <form action="edit.php" method="GET">
+            <input type="text" hidden name="id" value="<?=$elem['id']; ?>">
+            <p><input type="submit" name="edit" value="Редактировать"></p>
+        </form>
+    </div>
+
 </body>
 </html>
